@@ -6,14 +6,8 @@ function maxSub(array) {
   let max = 0, maxSum = 0;
 
   for (let i = 0; i < array.length; i++) {
-    console.log(max, 'max', maxSum, 'maxSum')
     max = Math.max(0, max + array[i])
-    console.log('max after asignment', max, 'array val', array[i])
-    console.log(maxSum, 'current maxbefore assigment')
     maxSum = Math.max(max, maxSum)
-    console.log(maxSum, 'current max after assigment')
-    console.log('***************************')
-
   }
   return maxSum
 }
