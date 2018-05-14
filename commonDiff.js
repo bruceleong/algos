@@ -4,6 +4,9 @@ function buildHash(arr) {
   for (let i = 1; i < arr.length; i++) {
     sum += arr[i]
     map[i] = sum
+    if (sum === 0) {
+      return i
+    }
   }
 }
 let array = [-1, -1, 2, 1]
