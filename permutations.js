@@ -11,6 +11,7 @@ function permutationsHelper(array, currentPermutation, permutations) {
     permutations.push(currentPermutation)
   } else {
     for (let i = 0; i < array.length; i++) {
+      console.log(i, 'current i')
       console.log('current element', array[i])
 
       const newArray = array.slice(0, i).concat(array.slice(i + 1));
