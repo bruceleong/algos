@@ -13,7 +13,7 @@ function maxSub(array) {
 }
 
 let arr = [-2, -3, 4, -1, -2, 1, 5, -1, 1]
-// console.log(maxSub(arr)) //7
+console.log(maxSub(arr)) //7
 
 function subArrayFinder(array, val) {
   if (array === null) return 0
