@@ -1,9 +1,12 @@
 function powerset(array, idx = null) {
 	let triplets = [[]]
 	for (const num of array) {
+		console.log(num, 'current num')
 		let length = triplets.length
+		console.log(length, 'currnt lenght of trip')
 		for (let i = 0; i < length; i++) {
 			triplets.push(triplets[i].concat(num))
+			console.log('current trip', triplets)
 		}
 	}
 	return triplets

@@ -2,6 +2,9 @@
 
 binary search
 
+TIme = O(nLogn)
+Space = 0(1)
+
 write a function
 */
 
