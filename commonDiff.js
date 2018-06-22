@@ -4,6 +4,7 @@ function buildHash(arr) {
   for (let i = 1; i < arr.length; i++) {
     sum += arr[i]
     map[i] = sum
+    console.log(map, 'map')
     if (sum === 0) {
       return i
     }

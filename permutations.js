@@ -6,7 +6,7 @@ function getPermutations(array) {
 }
 
 function permutationsHelper(array, currentPermutation, permutations) {
-  console.log('-array--', array, '--cur per', currentPermutation, '--perms--', permutations )
+  // console.log('-array--', array, '--cur per', currentPermutation, '--perms--', permutations )
 
   //base case
   if (!array.length && currentPermutation.length) {
@@ -14,7 +14,7 @@ function permutationsHelper(array, currentPermutation, permutations) {
     permutations.push(currentPermutation)
   } else {
     for (let i = 0; i < array.length; i++) {
-      console.log(array[i], 'currrent eleelement')
+      // console.log(array[i], 'currrent eleelement')
 
       const newArray = array.slice(0, i).concat(array.slice(i + 1));
       console.log(newArray, 'new Array')
@@ -25,5 +25,24 @@ function permutationsHelper(array, currentPermutation, permutations) {
   }
 }
 
-console.log(getPermutations(['a', 'b', 'c']))
+// console.log(getPermutations(['a', 'b', 'c']))
 // console.log(getPermutations(['a', 'b', 'c', 'd']))
+
+function fib(n, obj = {}) {
+
+  if (n === 0 || n === 1) {
+    return n
+  }
+  else {
+    if (obj[n]) {
+      console.log(obj, 'currt obj')
+      return obj[n]
+    } else {
+      console.log(obj, 'current obj')
+      return obj[n] = fib(n - 1) + fib(n - 2)
+    }
+  }
+
+}
+
+console.log(fib(8))
