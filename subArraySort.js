@@ -2,7 +2,9 @@ function subArraySort(array) {
   let minOutOfOrder = Infinity, maxOutOfOrder = -Infinity
   for (let i = 0; i < array.length; i++) {
     const num = array[i]
+    console.log(isOutOfOrder(i, num, array), 'checking on helper')
     if (isOutOfOrder(i, num, array)) {
+      console.log('inside', i)
       minOutOfOrder = Math.min(minOutOfOrder, num)
       maxOutOfOrder = Math.max(maxOutOfOrder, num)
       console.log(minOutOfOrder, 'current min', maxOutOfOrder, 'current Max')
@@ -23,6 +25,7 @@ function subArraySort(array) {
 function isOutOfOrder(i, num, array) {
   if (i === 0) return num > array[i + 1]
   if (i === array.length - 1) return num < array[i - 1]
+  console.log(num > array[i + 1] || num < array[i - 1], 'helper', i)
   return num > array[i + 1] || num < array[i - 1]
 }
 
