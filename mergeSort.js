@@ -33,3 +33,5 @@ function merge(left, right) {
 
 console.log(mergeSort([8, 5, 2, 9, 5, 6, 3]), '[2, 3, 5, 5, 6, 8, 9]')
 
+
+console.log(merge([1, 3, 5], [2, 4, 6]))

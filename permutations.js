@@ -10,16 +10,12 @@ function permutationsHelper(array, currentPermutation, permutations) {
 
   //base case
   if (!array.length && currentPermutation.length) {
-    console.log('current perm being pushed', currentPermutation)
     permutations.push(currentPermutation)
   } else {
     for (let i = 0; i < array.length; i++) {
-      console.log('current array', array)
 
       const newArray = array.slice(0, i).concat(array.slice(i + 1));
-      console.log(newArray, 'new Array')
       const newPermutation = currentPermutation.concat([array[i]])
-      console.log(newPermutation, 'new perm')
       permutationsHelper(newArray, newPermutation, permutations)
     }
   }
