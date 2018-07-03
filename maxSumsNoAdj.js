@@ -11,4 +11,5 @@ function maxSumNoAdj(array) {
   return first
 }
 
-console.log(maxSumNoAdj([75, 105, 120, 80, 90, 135]))
+// console.log(maxSumNoAdj([75, 1050, 120, 80, 90, 135]))
+console.log(maxSumNoAdj([10, 11, 3, 4]))
