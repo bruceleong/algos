@@ -1,19 +1,25 @@
-function bubbleSort(array) {
-  let swap = false, counter = 0;
-  while (swap === false) {
-    swap = true
-    for (let index = 0; index < array.length - 1; index++) {
-      counter++;
-      if (array[index] > array[index + 1]) {
-        swap = false
-        let swapEle = array[index + 1]
-        array[index + 1] = array[index]
-        array[index] = swapEle
-      }
+// 0(n^2) time || 0(1) space
 
-    }
-  }
-  return [array, counter]
+function bubbleSort(array) {
+	let isSorted = false;
+	let counter = 0;
+	while (!isSorted) {
+		isSorted = true
+		for (let i = 0; i < array.length - 1 - counter; i++) {
+			if (array[i] > array[i + 1]) {
+				isSorted = false
+				swap(i, i + 1, array)
+			}
+		}
+		counter++
+	}
+	return array
+}
+
+function swap(current, next, array) {
+	let temp = array[next];
+	array[next] = array[current]
+	array[current] = temp
 }
 
 console.log(bubbleSort([8, 5, 2, 9, 5, 6, 3]))
