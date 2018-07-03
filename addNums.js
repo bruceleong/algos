@@ -16,17 +16,13 @@ function adder(num1, num2) {
 
   for (let i = 0; i < bigNum.length; i++) {
     let totalToAdd = +(bigNum[i]) + +(i < smallNum.length ? smallNum[i] : 0) + carry
-    console.log(totalToAdd)
     if (totalToAdd > 9) {
       carry = Math.floor(totalToAdd / 10)
-      console.log(carry)
     } else {
       carry = 0
     }
     sum[i] = totalToAdd % 10
   }
-
-  // console.log(carry)
 
   if (carry !== 0) {
     sum[bigNum.length] = carry
