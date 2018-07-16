@@ -1,18 +1,47 @@
 function subArraySort(array) {
-  //two pointers
-  //earliest number, less than previous
-  let earliest, last;
-  for (let i = 0; i < array.length - 1; i++) {
-    if (array[i - 1] > array[i]) {
-      earliest = i
-      break;
+/*
+twoPointers
+find earliest number whose value is less than its previous value
+find latest number whose value is greater than it succeding value
+
+find largest and smallest number in between my twoPointers
+
+find proper index of that smallest
+find proper index of that largest
+
+return those indices
+Time - O(n)
+Space - O(1)
+*/
+  let minOutOfOrder = Infinity;
+  let maxOutOfOrder = -Infinity;
+  for (let i = 0; i < array.length; i++) {
+    const num = array[i]
+    if (isNotSorted(i, num, array)) {
+      minOutOfOrder = Math.min(minOutOfOrder, num)
+      maxOutOfOrder = Math.max(maxOutOfOrder, num)
+      console.log(minOutOfOrder, 'min', maxOutOfOrder, 'max')
     }
   }
-  for (let j = array.length; j > 0; j--) {
-    if (array[j] < array[j - 1]) {
-      console.log(array[j], 'index', j)
-    }
+  if (minOutOfOrder === Infinity) {
+    return [-1, -1]
   }
+  let subArrayLeftIdx = 0
+  while (array[subArrayLeftIdx] <= minOutOfOrder) {
+    subArrayLeftIdx++
+  }
+  let subArrayRightIdx = array.length - 1
+  while (array[subArrayRightIdx] >= maxOutOfOrder) {
+    subArrayRightIdx--
+  }
+
+  return [subArrayLeftIdx, subArrayRightIdx]
+}
+
+function isNotSorted(i, num, array) {
+  if (i === 0) return num > array[i + 1]
+  if (i === array.length - 1) return num < array[i - 1]
+  return num > array[i + 1] || num < array[i - 1]
 }
 
 
