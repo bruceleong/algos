@@ -9,13 +9,10 @@ function smallestDifference(arr1, arr2) {
   while (arr1Idx < arr1.length && arr2Idx < arr2.length) {
     let firstNum = arr1[arr1Idx]
     let secondNum = arr2[arr2Idx]
+    let abCurrent = Math.abs(current)
     current = firstNum - secondNum
-    //1 and 2 = -1
-    //3 and 2 = 1
-    //3 and 5 = -2
-    //7 and 5 = 2
 
-    if (current > 0 ) {
+    if (current > 0) {
       arr2Idx++
     } else if (current < 0) {
       arr1Idx++
@@ -23,8 +20,8 @@ function smallestDifference(arr1, arr2) {
       return [firstNum, secondNum]
     }
 
-    if (Math.abs(current) < smallest) {
-      smallest = Math.abs(current)
+    if (abCurrent < smallest) {
+      smallest = abCurrent
       smallestPair = [firstNum, secondNum]
     }
 

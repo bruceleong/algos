@@ -1,24 +1,25 @@
-function listAnagrams (wordsArr) {
-  const wordsTable = {};
-  wordsArr.forEach(function (word) {
-    // in order to sort a string we must convert it into an array of its characters
-    const wordKey = word.split('').sort().join('');
-    // if this sorted entry already exists push the word into the array with its sibling anagrams
-    if (wordsTable[wordKey]) {
-      wordsTable[wordKey].push(word);
-    }
-    // or if we have not yet visited any anagrams of this word, create a new array for it
-    else wordsTable[wordKey] = [word];
-  });
-  const output = [];
-  Object.keys(wordsTable).forEach(function (wordKey) {
-    const anagrams = wordsTable[wordKey];
-    // only include lists with more than one anagram
-    if (anagrams.length > 1) {
-      output.push(anagrams);
+//find all the anagrams within the array and output should be an array of array of anagrams
+
+function listAnagrams(arr) {
+  const wordTable = {};
+  const anagrams = []
+
+  arr.forEach(element => {
+    const wordKey = element.split('').sort().join('')
+    if (wordTable[wordKey]) {
+      wordTable[wordKey].push(element)
+    } else {
+      wordTable[wordKey] = [element]
     }
   });
-  return output;
+
+  Object.keys(wordTable).forEach(wordKey => {
+    const anagram = wordTable[wordKey]
+    if (anagram.length > 1) {
+      anagrams.push(anagram)
+    }
+  })
+  return anagrams
 }
 
 const words = ['cat', 'act', 'ignore', 'a phrase', 'tape', 'pate', 'e hpsara'];
