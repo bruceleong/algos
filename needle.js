@@ -1,19 +1,23 @@
+//Time O(n * m) - Space O(1)
 function indexOf (needle, haystack) {
-  for (let hIdx = 0; hIdx <= haystack.length - needle.length; hIdx++) {
-    //O(n * ...) where n is the number of letters in haystack
-    for (let nIdx = 0; nIdx < needle.length; nIdx++) {
-      //O(m * ...) where m is the number of letters in needle
-      if (haystack[hIdx + nIdx] !== needle[nIdx]) break;
-      //O(1) constant
-      if (nIdx + 1 === needle.length) return hIdx;
-      //O(1) constant
+  //loop through the haystack up to the length of the needle
+  for (let i = 0; i <= haystack.length - needle.length; i++) {
+
+    //start iterting through the needle
+    for (let j = 0; j < needle.length; j++) {
+      // where the haystack starts that will be the first i of the needle
+      if (haystack[i + j] !== needle[j]) break;
+
+      //if j becomes the length of the needle return the haystack's i
+      if (j + 1 === needle.length) return i
     }
   }
-  return -1;
+
+  return -1
 }
 
 
-console.log(indexOf('or', 'hello world'), '7'); // should return 7
-console.log(indexOf('hello world', 'or'), '-1'); // should return -1
-console.log(indexOf('howdy', 'hello world'), '-1'); // should return -1
-console.log(indexOf('oox', 'ooboxoooxo'), '6'); // should return 6
+console.log(indexOf('or', 'hello world'), 'correct or not 7'); // should return 7
+console.log(indexOf('hello world', 'or'), 'correct or not -1'); // should return -1
+console.log(indexOf('howdy', 'hello world'), 'correct or not -1'); // should return -1
+console.log(indexOf('oox', 'ooboxoooxo'), 'correct 6'); // should return 6
