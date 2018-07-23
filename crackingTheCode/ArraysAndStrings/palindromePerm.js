@@ -6,8 +6,18 @@ function palindromePermutation(str) {
     else if (palObj[str[i]]) palObj[str[i]]++
     else palObj[str[i]] = 1
   }
-  const counts = Object.values(palObj).sort((a, b) => a - b)
 
+  let pals = [];
+  for (const letters in palObj) {
+    if (palObj[letters] % 2 !== 0) {
+      pals.push(letters)
+    }
+  }
+  console.log(pals, 'pals', palObj)
+  if (pals.length > 1) return false
+  else return true
 }
 
-console.log(palindromePermutation('taco cat'))
+console.log(palindromePermutation('taco0 cat'))
+console.log(palindromePermutation('aab'))
+console.log(palindromePermutation('bbrruucece'))
