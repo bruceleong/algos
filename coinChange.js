@@ -34,4 +34,4 @@ function minNumberOfCoinsForChange(n, denoms) {
 	return coinChange[n] !== Infinity ? coinChange[n] : -1
 }
 
-console.log(minNumberOfCoinsForChange(7, [1, 5, 10]))
+console.log(minNumberOfCoinsForChange(10, [1, 5, 10]))

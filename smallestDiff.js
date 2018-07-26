@@ -12,9 +12,9 @@ function smallestDifference(arr1, arr2) {
     let abCurrent = Math.abs(current)
     current = firstNum - secondNum
 
-    if (current > 0) {
+    if (firstNum > secondNum) {
       arr2Idx++
-    } else if (current < 0) {
+    } else if (firstNum < secondNum) {
       arr1Idx++
     } else {
       return [firstNum, secondNum]
