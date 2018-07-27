@@ -11,4 +11,4 @@ function minNumOfCoins(target, arr) {
   return changeArr[target] !== Infinity ? changeArr[target] : -1
 }
 
-console.log(minNumOfCoins(7, [1, 5, 10]))
+console.log(minNumOfCoins(17, [1, 5, 10]))
