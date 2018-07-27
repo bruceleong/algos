@@ -1,3 +1,8 @@
+/*
+Max sum - no adjacencies
+time - O(n)
+space - O(1)
+*/
 function maxSumNoAdj(array) {
   if (!array.length) return 0;
   if (array.length === 1) return array[0]

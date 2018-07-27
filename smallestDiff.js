@@ -1,32 +1,35 @@
-function smallestDifference(arr1, arr2) {
-  arr1.sort((a, b) => a - b)
-  arr2.sort((a, b) => a - b)
-  let current = Infinity
-  let smallest = Infinity
-  let smallestPair = []
-  let arr1Idx = 0
-  let arr2Idx = 0;
-  while (arr1Idx < arr1.length && arr2Idx < arr2.length) {
-    let firstNum = arr1[arr1Idx]
-    let secondNum = arr2[arr2Idx]
-    let abCurrent = Math.abs(current)
-    current = firstNum - secondNum
+function smallestDifference(arrayOne, arrayTwo) {
+	arrayOne.sort((a, b) => a - b)
+	arrayTwo.sort((a, b) => a - b)
+	let currentDiff = Infinity;
+	let smallest = Infinity;
+	let smallestPair = []
+	let arr1Idx = 0;
+	let arr2Idx = 0;
+	while (arr1Idx < arrayOne.length && arr2Idx < arrayTwo.length) {
+    console.log('hereat allll')
+		const first = arrayOne[arr1Idx]
+		const second = arrayTwo[arr2Idx]
+		if (first > second) {
+      console.log('getting here?!!!!!!!!!')
+			currentDiff = first - second
+			arr2Idx++
+		} else if (first < second) {
+      console.log('gettiningn;alsjd;flkadslkfajsdl;kj')
+			currentDiff = second - first
+			arr1Idx++
+		} else {
+			return [first, second]
+		}
 
-    if (firstNum > secondNum) {
-      arr2Idx++
-    } else if (firstNum < secondNum) {
-      arr1Idx++
-    } else {
-      return [firstNum, secondNum]
-    }
+		if (currentDiff < smallest) {
 
-    if (abCurrent < smallest) {
-      smallest = abCurrent
-      smallestPair = [firstNum, secondNum]
-    }
-
-  }
-  return smallestPair;
+      console.log('getting hererer? ')
+			smallest = currentDiff
+			smallestPair = [first, second]
+		}
+	}
+	return smallestPair
 }
 
 

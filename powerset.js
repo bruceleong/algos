@@ -1,7 +1,8 @@
 function powerset(array, idx = null) {
 	let triplets = [[]]
 	for (let num of array) {
-		let length = triplets.length
+		const length = triplets.length
+		// console.log(length, ' current ')
 		for (let i = 0; i < length; i++) {
 			triplets.push(triplets[i].concat(num))
 		}
@@ -24,4 +25,4 @@ function powerset(array, idx = null) {
 	// return subset
 }
 
-console.log(powerset([1, 2, 3]))
+console.log(powerset(['b', 'a', 'd']))
