@@ -17,9 +17,9 @@ function bubbleSort(array) {
 }
 
 function swap(current, next, array) {
-	let temp = array[next];
+	let toChange = array[next]
 	array[next] = array[current]
-	array[current] = temp
+	array[current] = toChange
 }
 
 console.log(bubbleSort([8, 5, 2, 9, 5, 6, 3]))

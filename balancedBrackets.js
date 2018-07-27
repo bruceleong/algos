@@ -8,18 +8,21 @@ time / space = O(n)
 
 */
 
-const balancedParens = function(str) {
+const balancedParens = function (str) {
   const stack = []
-  const open = {'{': '}', '[': ']', '(': ')'}
-  const closed = {'}': true, ')': true, ']': true}
+  const open = { '(': ')', '{': '}', '[': ']' }
+  const closed = { '}': true, ']': true, ')': true }
+
   for (let i = 0; i < str.length; i++) {
-    const bracket = str[i]
-    if (open[bracket]) {
-      stack.push(bracket)
-    } else if (closed[bracket]) {
-      if (open[stack.pop()] !== bracket) return false
+    if (open[str[i]]) {
+      stack.push(str[i])
+    } else if (closed[str[i]]) {
+      if (open[stack.pop()] !== str[i]) {
+        return false
+      }
     }
   }
+  console.log(stack)
   return stack.length === 0
 };
 

@@ -1,15 +1,22 @@
+/*
+
+time and space O(n)
+
+*/
+
 function caesar(str, key) {
-  const newLetters = [];
-  const newKey = key % 26;
-  for (const letter of str) {
-    newLetters.push(getNewLetter(letter, key))
+  let finalCode = ''
+  const newKey = key % 26
+  for (let i = 0; i < str.length; i++) {
+    let newLetter = getNewLetter(str[i], newKey)
+    finalCode += newLetter
   }
-  return newLetters
+  return finalCode
 }
 
 function getNewLetter(letter, key) {
-  const newLetterCode = letter.charCodeAt() + key;
-  return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + newLetterCode % 122)
+  const newLetterKey = letter.charCodeAt() + key
+  return newLetterKey <= 122 ? String.fromCharCode(newLetterKey) : String.fromCharCode(96 + newLetterKey % 122)
 }
 
-console.log(caesar(['x', 'y', 'z'], 2))
+console.log(caesar('xyz', 2))

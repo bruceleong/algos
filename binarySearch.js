@@ -2,7 +2,7 @@
 
 binary search
 
-TIme = O(nLogn)
+TIme = O(Log(n))
 Space = 0(1)
 
 write a function
@@ -18,14 +18,14 @@ function binarySearch(arr, target) {
   let right = arr.length - 1;
 
   while (left <= right) {
-    let midpoint = Math.floor((left + right) / 2)
-    console.log(array[midpoint])
-    if (target === array[midpoint]) {
-      return midpoint
-    } else if (target > array[midpoint]) {
-      left = midpoint
-    } else if (target < array[midpoint]) {
-      right = midpoint
+    const midPoint = Math.floor((left + right) / 2)
+    const potential = arr[midPoint]
+    if (potential === target) {
+      return midPoint
+    } else if (potential > target) {
+      right = midPoint - 1
+    } else {
+      left = midPoint + 1
     }
   }
   return -1
