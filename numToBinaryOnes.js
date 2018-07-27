@@ -4,6 +4,7 @@ const numToBinaryOnes = (num) => {
   let currentMatchMax = 0;
   let continuous1s = 0;
   let binaryNumString = Number(num).toString(2)
+  console.log(binaryNumString)
 
   for (let i = 0; i < binaryNumString.length; i++) {
     if (binaryNumString[i] === '1') {
