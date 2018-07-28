@@ -1,3 +1,8 @@
+/*
+
+num of ways to make change
+
+*/
 function coinChange(num, denoms) {
 
   //initialize an array to find the combinations for x -> num
@@ -10,7 +15,7 @@ function coinChange(num, denoms) {
     for (let amount = 1; amount < num + 1; amount++) {
       //if the amount is larger than the denom, break it down
       if (amount >= denom) {
-        changeArray[amount] = changeArray[amount - denom]
+        changeArray[amount] += changeArray[amount - denom]
       }
     }
   }
