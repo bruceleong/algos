@@ -28,11 +28,11 @@ let tree = {
   }
 }
 
-let bstree = {
-  value: 2, left: {value: 0}, right: {
-    value: 4
-  }
-}
+// let bstree = {
+//   value: 2, left: {value: 0}, right: {
+//     value: 4
+//   }
+// }
 
 const lowestCommonAncestor = function(root, p, q) {
   if (root === null) {
