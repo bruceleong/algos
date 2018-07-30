@@ -1,19 +1,18 @@
 function root(x, n) {
-  if (x === 0) return 0;
-
-  let min = 0
-  let max = x
-  let candidateRoot = (max + min) / 2
-
-  while (candidateRoot - min >= 0.001) {
-    if (Math.pow(candidateRoot, n) > x) {
-      max = candidateRoot
-    } else if (Math.pow(candidateRoot, n) < x) {
-      min = candidateRoot
-    }
-    candidateRoot = (max + min) / 2
+  if (x === 0) return x
+  let min = 0;
+  let max = x;
+  let can = (min + max) / 2;
+  while (can - min >= .001) {
+    if (Math.pow(can, n) > x) {
+      max = can
+    } else if (Math.pow(can, n) < x) {
+      min = can
+    } else return can
+    can = (min + max) / 2
   }
-  return candidateRoot
+  return can
 }
 
 console.log(root(7, 3), '1.913')
+
