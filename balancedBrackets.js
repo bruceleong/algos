@@ -22,16 +22,16 @@ const balancedParens = function (str) {
       }
     }
   }
-  console.log(stack)
+
   return stack.length === 0
 };
 
-console.log(balancedParens('('), '----', false);  // false
-console.log(balancedParens('()'), '----', true); // true
+// console.log(balancedParens('('), '----', false);  // false
+// console.log(balancedParens('()'), '----', true); // true
 console.log(balancedParens(')('), '----', false);  // false
 console.log(balancedParens('(())'), '----', true);  // true
 console.log(balancedParens('[](){}'), '----', true); // true
-console.log(balancedParens('[({})]'), '----', true);   // true
-console.log(balancedParens('[(]{)}'), '----', false); // false
-console.log(balancedParens('var supYo  = { hey: dog() }'), '----', true); // true
-console.log(balancedParens('var fiddle = function() { doggy.eat();'), '----', false); // false
+// console.log(balancedParens('[({})]'), '----', true);   // true
+// console.log(balancedParens('[(]{)}'), '----', false); // false
+// console.log(balancedParens('var supYo  = { hey: dog() }'), '----', true); // true
+// console.log(balancedParens('var fiddle = function() { doggy.eat();'), '----', false); // false
