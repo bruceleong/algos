@@ -1,5 +1,6 @@
 function insertionSort(array) {
   for (let i = 1; i < array.length; i++) {
+    //starting from index 1 check current vs previous and swap and go backwards till you're set.... then continue to iterate
     while (i > 0 && array[i] < array[i - 1]) {
       swap(i, i - 1, array)
       i -= 1
