@@ -47,3 +47,5 @@ class LinkedList {
     return prevHead
   }
 }
+
+//another way to implement a stack

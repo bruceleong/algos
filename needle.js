@@ -16,7 +16,6 @@ function indexOf (needle, haystack) {
   return -1
 }
 
-
 console.log(indexOf('or', 'hello world'), 'correct or not 7'); // should return 7
 console.log(indexOf('hello world', 'or'), 'correct or not -1'); // should return -1
 console.log(indexOf('howdy', 'hello world'), 'correct or not -1'); // should return -1
