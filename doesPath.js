@@ -1,10 +1,12 @@
+//time O(n)
+//space O(n)
+
 const doesPathExist = (graph, start, target, visited = {}) => {
   //if there are no nodes connected to the start, return false
   if (!graph[start]) return false
   //start tracking visited nodes --> visited = {start: true}
   visited[start] = true;
   return graph[start].some((vertex) => {
-    // console.log('----------',vertex, 'current vertex -------')
     //if this item in the array is the end of the path, return true
     if (vertex === target) return true;
     // console.log('*********', visited, 'visited vertices or nodes*********')
@@ -12,7 +14,7 @@ const doesPathExist = (graph, start, target, visited = {}) => {
     if (!visited[vertex]) {
       // console.log('########',vertex, 'vertex we need to check########')
       return doesPathExist(graph, vertex, target, visited);
-    //else, if we have already visited this item in the array, that means we do not want to keep looking infinitely
+      //else, if we have already visited this item in the array, that means we do not want to keep looking infinitely
     } else {
       return false;
     }
