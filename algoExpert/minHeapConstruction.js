@@ -4,7 +4,7 @@ class MinHeap {
   }
 
   buildHeap(array) {
-    //implement with siftdown - grab first parent
+    //implement with siftdown - grab last parent
     const firstParentIdx = Math.floor((array.length - 2) / 2)
 
     //start at the bottom and go to the top
@@ -51,7 +51,7 @@ class MinHeap {
      //condition => you've reached the root or something is out of place
 		while (currentIdx > 0 && heap[currentIdx] < heap[parentIdx]) {
       //swap them
-      this.swap(currentIdx, parentIdx, this.heap)
+      this.swap(currentIdx, parentIdx, heap)
       //go back up since you just swapped to the parent of the current & find the new parent and check
 			currentIdx = parentIdx
 			parentIdx = Math.floor((currentIdx - 1) / 2)

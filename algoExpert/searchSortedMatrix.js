@@ -1,6 +1,6 @@
 function searchMatrix(matrix, target) {
   let row = 0
-  let column = matrix[0].length - 1
+  let column = matrix[0].length - 1//start at the end of the first row - you're going down or left, that's it
   while (row < matrix.length && column >= 0) {
     const potential = matrix[row][column]
     console.log(potential, '======', [row, column])
