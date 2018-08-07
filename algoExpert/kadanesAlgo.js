@@ -9,9 +9,8 @@ function kadanesAlgo(arr) {
     //check Max of (previous + next  previous) or previous
     maxSoFar = Math.max(maxSoFar, maxEndingHere)
   }
-  console.log(maxEndingHere)
   return maxSoFar
 }
 
 console.log(kadanesAlgo([1, 2, 3, -1]), '-->', 6)
-// console.log(kadanesAlgo([1, -2, 3]), '-->', 2)
+console.log(kadanesAlgo([1, -2, 3]), '-->', 2)
