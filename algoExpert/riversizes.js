@@ -73,11 +73,11 @@ function getUnvisitedNeighbors(i, j, matrix, visited) {
   return unvisitedNeighbors
 }
 
-// console.log(riverSizes([
-//   [1, 0, 0, 1],
-//   [1, 0, 1, 0],
-//   [0, 0, 1, 0],
-//   [1, 0, 1, 0]
-// ]), '[1, 1, 2, 3]')
+console.log(riverSizes([
+  [1, 0, 0, 1],
+  [1, 0, 1, 0],
+  [0, 0, 1, 0],
+  [1, 0, 1, 0]
+]), '[1, 1, 2, 3]')
 
 console.log(riverSizes([[0, 0, 0], [0, 0, 0]]))
