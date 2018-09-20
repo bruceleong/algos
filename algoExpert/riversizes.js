@@ -27,7 +27,6 @@ function riverSizes(matrix) {
 }
 
 function traverseNode(i, j, matrix, visited, sizes) {
-  console.log('traversing node - start of func')
   let currentRiverSizes = 0
   const nodesToExplore = [[i, j]]
   console.log(nodesToExplore)

@@ -3,20 +3,24 @@
 time and space O(n)
 
 */
-
 function caesar(str, key) {
-  let finalCode = ''
-  const newKey = key % 26
+  /*
+  loop through each letter
+  */
+  const newKey = key % 27
+  let newWord = ''
+  console.log(newKey)
+
   for (let i = 0; i < str.length; i++) {
-    let newLetter = getNewLetter(str[i], newKey)
-    finalCode += newLetter
+    newWord += assignNew(str[i], newKey)
   }
-  return finalCode
+  return newWord
 }
 
-function getNewLetter(letter, key) {
-  const newLetterKey = letter.charCodeAt() + key
-  return newLetterKey <= 122 ? String.fromCharCode(newLetterKey) : String.fromCharCode(96 + newLetterKey % 122)
+function assignNew(letter, key) {
+  const newLetterCode = letter.charCodeAt() + key
+  return newLetterCode > 122 ? String.fromCharCode(newLetterCode % 122 + 96) : String.fromCharCode(newLetterCode);
 }
 
 console.log(caesar('xyz', 2))
+// console.log(caesar('ab', 1))

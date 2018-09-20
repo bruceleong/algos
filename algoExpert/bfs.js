@@ -12,6 +12,7 @@ class Node {
 
   breathFirstSearch(array) {
     let queue = [this]
+
     while (queue.length > 0) {
       const currentNode = queue.shift()
       array.push(currentNode.name)
@@ -20,7 +21,9 @@ class Node {
       }
     }
     return array
+
   }
+
 }
 
 const test3 = new Node('A')
